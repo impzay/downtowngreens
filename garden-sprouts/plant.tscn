@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://pomuvcnko6ij"]
+
+[ext_resource type="Script" uid="uid://dcbe53nf5xka4" path="res://plant.gd" id="1_mbetm"]
+[ext_resource type="Texture2D" uid="uid://frctku8m0oo0" path="res://icon.svg" id="1_t03al"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(29, 76)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(50, 105.5)
+
+[node name="Plant" type="Node2D" unique_id=16015361]
+script = ExtResource("1_mbetm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1958647453]
+position = Vector2(-0.99999905, 2.4999979)
+scale = Vector2(0.328125, 0.8203126)
+texture = ExtResource("1_t03al")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1805816403]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=442467576]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Zone" type="Area2D" parent="." unique_id=863941260]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone" unique_id=1580909420]
+position = Vector2(-2, 2)
+shape = SubResource("RectangleShape2D_yf5fn")
+debug_color = Color(0.99607843, 0, 0.20392157, 0.16470589)

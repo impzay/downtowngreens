@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c0x216xvxywlj"]
+
+[ext_resource type="Texture2D" uid="uid://frctku8m0oo0" path="res://icon.svg" id="1_6polw"]
+[ext_resource type="Script" uid="uid://cik0frxb4k8bs" path="res://pollinator.gd" id="1_dkmy2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 49.0
+height = 118.0
+
+[node name="Pollinator" type="Node2D" unique_id=741083609]
+script = ExtResource("1_dkmy2")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=416774561]
+texture = ExtResource("1_6polw")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=284734490]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=575626346]
+shape = SubResource("CapsuleShape2D_g4v7s")
