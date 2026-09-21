@@ -13,7 +13,7 @@ config_version=5
 config/name="garden_sprouts"
 run/main_scene="uid://b0l8qtqddlnj3"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Assets/icon.svg"
 
 [autoload]
 
@@ -30,4 +30,6 @@ window/stretch/aspect="expand"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_repeat=1
 rendering_device/driver.windows="d3d12"

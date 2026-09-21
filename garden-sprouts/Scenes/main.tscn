@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://b0l8qtqddlnj3"]
+
+[ext_resource type="Texture2D" uid="uid://bb5g1h7fijfem" path="res://Assets/1_Background.png" id="1_8gbba"]
+[ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="2_jjvhh"]
+[ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Anja Eliane accent002.ttf" id="2_kry3j"]
+[ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="3_kry3j"]
+[ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/yay.mp3" id="5_kry3j"]
+
+[node name="Main" type="Node2D" unique_id=268824148]
+
+[node name="UI" type="Control" parent="." unique_id=111675621]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
+
+[node name="1Background" type="Sprite2D" parent="UI" unique_id=932205642]
+position = Vector2(575, 323.49997)
+scale = Vector2(0.6009259, 0.6009259)
+texture = ExtResource("1_8gbba")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=650406494]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 452.99997
+offset_right = 312.34918
+offset_bottom = 471.25394
+scale = Vector2(2.52, 2.52)
+theme_override_colors/default_color = Color(0.35888037, 0.5349528, 0.8254725, 1)
+theme_override_fonts/normal_font = ExtResource("2_kry3j")
+text = "click plant to pollinate"
+
+[node name="Plant" parent="." unique_id=16015361 instance=ExtResource("2_jjvhh")]
+position = Vector2(672, 95)
+
+[node name="Plant2" parent="." unique_id=1843008272 instance=ExtResource("2_jjvhh")]
+position = Vector2(899, 351)
+
+[node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]
+position = Vector2(271, 176)
+
+[node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=182843319]
+
+[node name="yay" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=844444815]
+stream = ExtResource("5_kry3j")
+volume_db = 1.083
+pitch_scale = 1.4
+max_distance = 3145.0
+
+[connection signal="finished" from="Pollinator/Sound_Handler/yay" to="Pollinator" method="_on_yay_finished"]

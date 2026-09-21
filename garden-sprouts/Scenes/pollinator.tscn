@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0x216xvxywlj"]
 
-[ext_resource type="Texture2D" uid="uid://frctku8m0oo0" path="res://icon.svg" id="1_6polw"]
-[ext_resource type="Script" uid="uid://cik0frxb4k8bs" path="res://pollinator.gd" id="1_dkmy2"]
+[ext_resource type="Texture2D" uid="uid://frctku8m0oo0" path="res://Assets/icon.svg" id="1_6polw"]
+[ext_resource type="Script" uid="uid://cik0frxb4k8bs" path="res://Scripts/pollinator.gd" id="1_dkmy2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 49.0

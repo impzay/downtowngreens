@@ -2,7 +2,10 @@ extends Node2D
 
 signal mouse_entered_plant(plant);
 signal mouse_exited_plant(plant);
+
 var is_selected:bool = false;
+var is_pollinated: bool = false; #so we can change sprite state later
+
 var time: float = 0.0;
 
 @onready var sprite = $Sprite2D
@@ -22,7 +25,7 @@ func _process(delta: float) -> void:
 		#divide by 4 gives you 0 to 0.5
 		#+0.5 gives you 0.5 to 1
 func start_hovering():
-	time = 0.0;
+	time = 1.0;
 	is_selected = true
 	
 func stop_hovering():
