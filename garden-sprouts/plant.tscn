@@ -7,7 +7,7 @@
 size = Vector2(29, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(50, 105.5)
+size = Vector2(117, 146.875)
 
 [node name="Plant" type="Node2D" unique_id=16015361]
 script = ExtResource("1_mbetm")
@@ -26,6 +26,9 @@ shape = SubResource("RectangleShape2D_g4v7s")
 [node name="Zone" type="Area2D" parent="." unique_id=863941260]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zone" unique_id=1580909420]
-position = Vector2(-2, 2)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_yf5fn")
 debug_color = Color(0.99607843, 0, 0.20392157, 0.16470589)
+
+[connection signal="mouse_entered" from="Zone" to="." method="_on_zone_mouse_entered"]
+[connection signal="mouse_exited" from="Zone" to="." method="_on_zone_mouse_exited"]
