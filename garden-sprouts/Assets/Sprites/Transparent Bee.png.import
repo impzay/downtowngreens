@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb5g1h7fijfem"
-path="res://.godot/imported/1_Background.png-72d3dfdeee5607230fcfb46869edae97.ctex"
+uid="uid://cql44a1uviua"
+path="res://.godot/imported/Transparent Bee.png-0ca304d530dde214fef2255d375d9b42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/1_Background.png"
-dest_files=["res://.godot/imported/1_Background.png-72d3dfdeee5607230fcfb46869edae97.ctex"]
+source_file="res://Assets/Sprites/Transparent Bee.png"
+dest_files=["res://.godot/imported/Transparent Bee.png-0ca304d530dde214fef2255d375d9b42.ctex"]
 
 [params]
 

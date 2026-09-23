@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://b0l8qtqddlnj3"]
 
-[ext_resource type="Texture2D" uid="uid://bb5g1h7fijfem" path="res://Assets/1_Background.png" id="1_8gbba"]
+[ext_resource type="Texture2D" uid="uid://bb5g1h7fijfem" path="res://Assets/Art/1_Background.png" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="2_jjvhh"]
-[ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Anja Eliane accent002.ttf" id="2_kry3j"]
+[ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="3_kry3j"]
-[ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/yay.mp3" id="5_kry3j"]
+[ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scenes/sound_handler.gd" id="5_6bp64"]
+[ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="5_kry3j"]
 
 [node name="Main" type="Node2D" unique_id=268824148]
 
@@ -40,12 +41,13 @@ position = Vector2(899, 351)
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]
 position = Vector2(271, 176)
 
-[node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=182843319]
+[node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=809176311]
+script = ExtResource("5_6bp64")
 
-[node name="yay" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=844444815]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=844444815]
 stream = ExtResource("5_kry3j")
 volume_db = 1.083
 pitch_scale = 1.4
 max_distance = 3145.0
 
-[connection signal="finished" from="Pollinator/Sound_Handler/yay" to="Pollinator" method="_on_yay_finished"]
+[connection signal="finished" from="Pollinator/Sound_Handler/AudioStreamPlayer2D" to="Pollinator" method="_on_yay_finished"]

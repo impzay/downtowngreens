@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0x216xvxywlj"]
 
-[ext_resource type="Texture2D" uid="uid://frctku8m0oo0" path="res://Assets/icon.svg" id="1_6polw"]
 [ext_resource type="Script" uid="uid://cik0frxb4k8bs" path="res://Scripts/pollinator.gd" id="1_dkmy2"]
+[ext_resource type="Texture2D" uid="uid://cql44a1uviua" path="res://Assets/Sprites/Transparent Bee.png" id="2_qrert"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 49.0
@@ -11,7 +11,9 @@ height = 118.0
 script = ExtResource("1_dkmy2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=416774561]
-texture = ExtResource("1_6polw")
+position = Vector2(5, 17)
+scale = Vector2(0.09702821, 0.09702822)
+texture = ExtResource("2_qrert")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=284734490]
 

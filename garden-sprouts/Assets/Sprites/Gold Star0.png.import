@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qqap4a5k3eef"
-path="res://.godot/imported/Gold Star0.png-24eee58ea2e426f27a450e254dba7f38.ctex"
+path="res://.godot/imported/Gold Star0.png-cd6d1f1896a883011f74e6f8d7380b61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Gold Star0.png"
-dest_files=["res://.godot/imported/Gold Star0.png-24eee58ea2e426f27a450e254dba7f38.ctex"]
+source_file="res://Assets/Sprites/Gold Star0.png"
+dest_files=["res://.godot/imported/Gold Star0.png-cd6d1f1896a883011f74e6f8d7380b61.ctex"]
 
 [params]
 

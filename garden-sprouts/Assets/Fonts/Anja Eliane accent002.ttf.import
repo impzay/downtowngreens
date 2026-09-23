@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dcrcb5dvofcxi"
-path="res://.godot/imported/Anja Eliane accent002.ttf-af5727bece6daa26af721d3efac55ddf.fontdata"
+path="res://.godot/imported/Anja Eliane accent002.ttf-cc38884b60462308496120328baf4045.fontdata"
 
 [deps]
 
-source_file="res://Assets/Anja Eliane accent002.ttf"
-dest_files=["res://.godot/imported/Anja Eliane accent002.ttf-af5727bece6daa26af721d3efac55ddf.fontdata"]
+source_file="res://Assets/Fonts/Anja Eliane accent002.ttf"
+dest_files=["res://.godot/imported/Anja Eliane accent002.ttf-cc38884b60462308496120328baf4045.fontdata"]
 
 [params]
 
