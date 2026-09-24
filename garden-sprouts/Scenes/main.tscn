@@ -50,4 +50,6 @@ volume_db = 1.083
 pitch_scale = 1.4
 max_distance = 3145.0
 
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=313230373]
+
 [connection signal="finished" from="Pollinator/Sound_Handler/AudioStreamPlayer2D" to="Pollinator" method="_on_yay_finished"]

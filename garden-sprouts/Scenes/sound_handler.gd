@@ -1,10 +1,16 @@
 extends Node2D
 
 @onready var sound_player = $AudioStreamPlayer2D
+@onready var music_player = $MusicPlayer
+
 var sounds_library = {
 	"yay": preload("res://Assets/Sound/yay.mp3"),
 	"button_click": preload("res://Assets/Sound/506054__mellau__button-click-1.wav"),
 	"button_hover": preload("res://Assets/Sound/338229__fachii__button-hover.wav")
+}
+
+var music_playlist = {
+	"main_background": preload("res://Assets/Sound/sigmamusicart-background-music-jazz-597003.mp3")
 }
 
 func get_sound(sound_name : String):
@@ -15,5 +21,5 @@ func get_sound(sound_name : String):
 		push_error("Sound not found.")
 		
 func _ready() -> void:
-	#add background music here
-	return
+	music_player.stream = music_playlist["main_background"]
+	music_player.play()
