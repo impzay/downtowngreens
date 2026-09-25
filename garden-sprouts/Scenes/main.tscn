@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://b0l8qtqddlnj3"]
 
-[ext_resource type="Texture2D" uid="uid://bb5g1h7fijfem" path="res://Assets/Art/1_Background.png" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="2_jjvhh"]
 [ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="3_kry3j"]
@@ -16,11 +15,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="1Background" type="Sprite2D" parent="UI" unique_id=932205642]
-position = Vector2(575, 323.49997)
-scale = Vector2(0.6009259, 0.6009259)
-texture = ExtResource("1_8gbba")
-
 [node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=650406494]
 layout_mode = 0
 offset_left = 106.0
@@ -34,9 +28,12 @@ text = "click plant to pollinate"
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("2_jjvhh")]
 position = Vector2(672, 95)
+is_pollinated = true
+plant_type = "Pumpkin"
 
 [node name="Plant2" parent="." unique_id=1843008272 instance=ExtResource("2_jjvhh")]
 position = Vector2(899, 351)
+plant_type = "Pumpkin"
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]
 position = Vector2(271, 176)

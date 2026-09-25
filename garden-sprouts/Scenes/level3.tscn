@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bjwc4kbanm2ac"]
+
+[ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="1_d77hw"]
+[ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scenes/sound_handler.gd" id="2_jaajx"]
+[ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="3_mrxql"]
+[ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="4_qrg6c"]
+
+[node name="Level3" type="Node2D" unique_id=472284549]
+
+[node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("1_d77hw")]
+position = Vector2(104, 339)
+
+[node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=1615600936]
+position = Vector2(-73, -281)
+script = ExtResource("2_jaajx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=52113329]
+stream = ExtResource("3_mrxql")
+volume_db = 1.083
+pitch_scale = 1.4
+max_distance = 3145.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=566348799]
+
+[node name="Plant" parent="." unique_id=16015361 instance=ExtResource("4_qrg6c")]
+position = Vector2(559, 124)
+is_pollinated = true
+plant_type = "Carrot"
+
+[node name="Plant2" parent="." unique_id=521468968 instance=ExtResource("4_qrg6c")]
+position = Vector2(911, 195)
+plant_type = "Pumpkin"
+
+[node name="Plant3" parent="." unique_id=470140327 instance=ExtResource("4_qrg6c")]
+position = Vector2(590, 502)
+plant_type = "Carrot"
+
+[node name="Plant4" parent="." unique_id=657675004 instance=ExtResource("4_qrg6c")]
+position = Vector2(972, 445)
+is_pollinated = true
+plant_type = "Pumpkin"
