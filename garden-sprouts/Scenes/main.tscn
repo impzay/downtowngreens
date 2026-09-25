@@ -1,18 +1,22 @@
 [gd_scene format=3 uid="uid://b0l8qtqddlnj3"]
 
+[ext_resource type="Script" uid="uid://bmyfne6781ygk" path="res://Scenes/main.gd" id="1_6bp64"]
+[ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="2_jjvhh"]
 [ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_kry3j"]
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="3_kry3j"]
-[ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scenes/sound_handler.gd" id="5_6bp64"]
+[ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="5_6bp64"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="5_kry3j"]
 
 [node name="Main" type="Node2D" unique_id=268824148]
+script = ExtResource("1_6bp64")
 
 [node name="UI" type="Control" parent="." unique_id=111675621]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_21xkr")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=650406494]
@@ -26,6 +30,15 @@ theme_override_colors/default_color = Color(0.35888037, 0.5349528, 0.8254725, 1)
 theme_override_fonts/normal_font = ExtResource("2_kry3j")
 text = "click plant to pollinate"
 
+[node name="ColorRect" type="ColorRect" parent="UI" unique_id=694209026]
+top_level = true
+layout_mode = 0
+offset_left = -13.0
+offset_top = -28.0
+offset_right = 1187.0
+offset_bottom = 687.0
+color = Color(0, 0, 0, 1)
+
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("2_jjvhh")]
 position = Vector2(672, 95)
 is_pollinated = true
@@ -37,6 +50,7 @@ plant_type = "Pumpkin"
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]
 position = Vector2(271, 176)
+transition_time = 1
 
 [node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=809176311]
 script = ExtResource("5_6bp64")
