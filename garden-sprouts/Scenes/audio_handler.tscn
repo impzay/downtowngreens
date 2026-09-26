@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ddf3x2j8uacme"]
+
+[ext_resource type="Script" uid="uid://bdlehrav48nwy" path="res://Scripts/audio_handler.gd" id="1_8q167"]
+[ext_resource type="AudioStream" uid="uid://vgk2durfdc0y" path="res://Assets/Sound/sigmamusicart-background-music-jazz-597003.mp3" id="1_f58ip"]
+
+[node name="AudioHandler" type="AudioStreamPlayer" unique_id=397559448]
+stream = ExtResource("1_f58ip")
+script = ExtResource("1_8q167")

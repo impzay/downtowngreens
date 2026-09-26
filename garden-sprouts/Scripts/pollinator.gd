@@ -7,7 +7,11 @@ var total_plants_pollinated: int = 0;
 var held_pollen: String = "";
 var level: int = 1
 @export var transition_time: int
-@onready var sfx_handler = $Sound_Handler
+@onready var sfx_handler = get_parent().get_node("Sound_Handler")
+@onready var sprite = $AnimatedSprite2D
+
+func _ready() -> void:
+	pass
 
 func _process(delta: float) -> void:
 	if !is_moving:
@@ -47,6 +51,7 @@ func celebrate():
 
 func win():
 	print("you win!")
+	GameManager.game_won = true
 	#play again button pops up 
 	
 func play_sound(sound_name : String):

@@ -9,6 +9,17 @@
 
 [node name="Level2" type="Node2D" unique_id=472284549]
 
+[node name="Sound_Handler" type="Node2D" parent="." unique_id=1615600936]
+script = ExtResource("4_styii")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=52113329]
+stream = ExtResource("3_styii")
+volume_db = 1.083
+pitch_scale = 1.4
+max_distance = 3145.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=566348799]
+
 [node name="UI" type="Control" parent="." unique_id=1353652983]
 layout_mode = 3
 anchors_preset = 0
@@ -30,6 +41,7 @@ text = "click plant to pollinate"
 
 [node name="ColorRect" type="ColorRect" parent="UI" unique_id=1710521215]
 top_level = true
+z_index = 1
 layout_mode = 0
 offset_left = -13.0
 offset_top = -28.0
@@ -38,19 +50,8 @@ offset_bottom = 687.0
 color = Color(0, 0, 0, 1)
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("1_dlanv")]
+z_index = 1
 position = Vector2(73, 281)
-
-[node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=1615600936]
-position = Vector2(-73, -281)
-script = ExtResource("4_styii")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=52113329]
-stream = ExtResource("3_styii")
-volume_db = 1.083
-pitch_scale = 1.4
-max_distance = 3145.0
-
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=566348799]
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("4_lgosu")]
 position = Vector2(405, 114)

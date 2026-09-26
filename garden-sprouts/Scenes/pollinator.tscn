@@ -1,19 +1,59 @@
 [gd_scene format=3 uid="uid://c0x216xvxywlj"]
 
 [ext_resource type="Script" uid="uid://cik0frxb4k8bs" path="res://Scripts/pollinator.gd" id="1_dkmy2"]
-[ext_resource type="Texture2D" uid="uid://cql44a1uviua" path="res://Assets/Sprites/Transparent Bee.png" id="2_qrert"]
+[ext_resource type="Texture2D" uid="uid://benoflgth37vu" path="res://Assets/Sprites/beesheett.png" id="2_qrert"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su87t"]
+atlas = ExtResource("2_qrert")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynioc"]
+atlas = ExtResource("2_qrert")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_saavb"]
+atlas = ExtResource("2_qrert")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aj78p"]
+atlas = ExtResource("2_qrert")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su87t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynioc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_saavb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aj78p")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
 radius = 49.0
-height = 118.0
+height = 98.0
 
 [node name="Pollinator" type="Node2D" unique_id=741083609]
 script = ExtResource("1_dkmy2")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=416774561]
-position = Vector2(5, 17)
-scale = Vector2(0.09702821, 0.09702822)
-texture = ExtResource("2_qrert")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1120729021]
+position = Vector2(0, -1)
+scale = Vector2(2.1817431, 2.1817431)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"fly"
+autoplay = "fly"
+frame = 2
+frame_progress = 0.8238297
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=284734490]
 

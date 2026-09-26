@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0l8qtqddlnj3"]
 
-[ext_resource type="Script" uid="uid://bmyfne6781ygk" path="res://Scenes/main.gd" id="1_6bp64"]
+[ext_resource type="Script" uid="uid://bmyfne6781ygk" path="res://Scripts/main.gd" id="1_6bp64"]
 [ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="2_jjvhh"]
 [ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_kry3j"]
@@ -52,15 +52,16 @@ plant_type = "Pumpkin"
 position = Vector2(271, 176)
 transition_time = 1
 
-[node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=809176311]
+[node name="Sound_Handler" type="Node2D" parent="." unique_id=809176311]
+position = Vector2(271, 176)
 script = ExtResource("5_6bp64")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=844444815]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=844444815]
 stream = ExtResource("5_kry3j")
 volume_db = 1.083
 pitch_scale = 1.4
 max_distance = 3145.0
 
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=313230373]
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=313230373]
 
-[connection signal="finished" from="Pollinator/Sound_Handler/AudioStreamPlayer2D" to="Pollinator" method="_on_yay_finished"]
+[connection signal="finished" from="Sound_Handler/AudioStreamPlayer2D" to="Pollinator" method="_on_yay_finished"]

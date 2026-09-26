@@ -2,12 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="1_d77hw"]
 [ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="1_mrxql"]
+[ext_resource type="Script" uid="uid://oytehwbnlmn2" path="res://Scenes/level3.gd" id="1_qrg6c"]
 [ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="2_jaajx"]
 [ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_qrg6c"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="3_mrxql"]
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="4_qrg6c"]
 
 [node name="Level3" type="Node2D" unique_id=472284549]
+script = ExtResource("1_qrg6c")
+
+[node name="Sound_Handler" type="Node2D" parent="." unique_id=1615600936]
+position = Vector2(31, 58)
+script = ExtResource("2_jaajx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=52113329]
+stream = ExtResource("3_mrxql")
+volume_db = 1.083
+pitch_scale = 1.4
+max_distance = 3145.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=566348799]
 
 [node name="UI" type="Control" parent="." unique_id=543839926]
 layout_mode = 3
@@ -30,27 +44,28 @@ text = "click plant to pollinate"
 
 [node name="ColorRect" type="ColorRect" parent="UI" unique_id=2022805863]
 top_level = true
+z_index = 1
 layout_mode = 0
 offset_left = -13.0
 offset_top = -28.0
 offset_right = 1187.0
 offset_bottom = 687.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="ReplayButton" type="Button" parent="UI" unique_id=455660068]
+layout_mode = 0
+offset_left = 963.0
+offset_top = 9.0
+offset_right = 1122.0
+offset_bottom = 79.0
+theme_override_fonts/font = ExtResource("2_qrg6c")
+theme_override_font_sizes/font_size = 43
+text = "Replay!"
+
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("1_d77hw")]
+z_index = 1
 position = Vector2(104, 339)
-
-[node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=1615600936]
-position = Vector2(-73, -281)
-script = ExtResource("2_jaajx")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=52113329]
-stream = ExtResource("3_mrxql")
-volume_db = 1.083
-pitch_scale = 1.4
-max_distance = 3145.0
-
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=566348799]
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("4_qrg6c")]
 position = Vector2(559, 124)
@@ -69,3 +84,5 @@ plant_type = "Carrot"
 position = Vector2(972, 445)
 is_pollinated = true
 plant_type = "Pumpkin"
+
+[connection signal="pressed" from="UI/ReplayButton" to="." method="_on_replay_button_pressed"]
