@@ -1,6 +1,10 @@
 extends Node2D
 
-@onready var sound_player = $AudioStreamPlayer2D
+@onready var sound_player: AudioStreamPlayer2D = $AudioStreamPlayer2D
+var sfx_muted: bool = false
+
+func _ready():
+	pass
 
 var sounds_library = {
 	"yay": preload("res://Assets/Sound/yay.mp3"),
@@ -11,6 +15,12 @@ var sounds_library = {
 func get_sound(sound_name : String):
 	if sounds_library.has(sound_name):
 		sound_player.stream = sounds_library[sound_name]
+		sound_player.volume_db = -12.0
 		sound_player.play()
+		
 	else:
 		push_error("Sound not found.")
+
+func mute_sounds():
+	sfx_muted = !sfx_muted
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), sfx_muted)

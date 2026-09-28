@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="5_6bp64"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://dpe43tjbujvfj" path="res://Scenes/pause_screen.tscn" id="8_344ge"]
 
 [node name="Main" type="Node2D" unique_id=268824148]
 script = ExtResource("1_6bp64")
@@ -63,5 +64,11 @@ pitch_scale = 1.4
 max_distance = 3145.0
 
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=313230373]
+
+[node name="PauseScreen" parent="." unique_id=1818206211 instance=ExtResource("8_344ge")]
+offset_left = 278.0
+offset_top = 269.0
+offset_right = 278.0
+offset_bottom = 269.0
 
 [connection signal="finished" from="Sound_Handler/AudioStreamPlayer2D" to="Pollinator" method="_on_yay_finished"]

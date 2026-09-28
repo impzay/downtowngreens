@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="1_d77hw"]
 [ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="1_mrxql"]
-[ext_resource type="Script" uid="uid://oytehwbnlmn2" path="res://Scenes/level3.gd" id="1_qrg6c"]
+[ext_resource type="Script" uid="uid://oytehwbnlmn2" path="res://Scripts/level3.gd" id="1_qrg6c"]
 [ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="2_jaajx"]
 [ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_qrg6c"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="3_mrxql"]
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="4_qrg6c"]
+[ext_resource type="PackedScene" uid="uid://dpe43tjbujvfj" path="res://Scenes/pause_screen.tscn" id="6_1x0xh"]
 
 [node name="Level3" type="Node2D" unique_id=472284549]
 script = ExtResource("1_qrg6c")
@@ -62,6 +63,13 @@ offset_bottom = 79.0
 theme_override_fonts/font = ExtResource("2_qrg6c")
 theme_override_font_sizes/font_size = 43
 text = "Replay!"
+
+[node name="PauseScreen" parent="UI" unique_id=1818206211 instance=ExtResource("6_1x0xh")]
+layout_mode = 1
+offset_left = 504.0
+offset_top = 294.0
+offset_right = 504.0
+offset_bottom = 294.0
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("1_d77hw")]
 z_index = 1

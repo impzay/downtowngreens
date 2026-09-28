@@ -3,7 +3,8 @@ extends Node
 var level: int = 1;
 var total_plants_pollinated: int = 0;
 var game_won: bool = false
-
+var paused: bool = false
+	
 func next_level():
 	
 	level += 1;
@@ -28,3 +29,7 @@ func restart():
 	level = 1
 	total_plants_pollinated = 0
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
+func quit():
+	get_tree().quit()
+	

@@ -14,6 +14,9 @@ func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
+	if GameManager.paused:
+		return
+	
 	if !is_moving:
 		return
 	
@@ -70,6 +73,9 @@ func _input(inp: InputEvent) -> void:
 		
 		#are you hovering over a plant? if plant is not pollinated, pollinate it, 
 		if mouse_over_plant: 
+			if GameManager.paused:
+				return
+				
 			if held_pollen != mouse_over_plant[0] and !mouse_over_plant[1]:
 				print("you dont have this plants pollen");
 				return
