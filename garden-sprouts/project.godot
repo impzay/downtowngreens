@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="garden_sprouts"
-run/main_scene="uid://b0l8qtqddlnj3"
+run/main_scene="uid://d2j5nlm72lmdy"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

@@ -22,10 +22,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=650406494]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 452.99997
-offset_right = 312.34918
-offset_bottom = 471.25394
+offset_left = 97.0
+offset_top = 962.0
+offset_right = 303.34918
+offset_bottom = 980.25397
 scale = Vector2(2.52, 2.52)
 theme_override_colors/default_color = Color(0.35888037, 0.5349528, 0.8254725, 1)
 theme_override_fonts/normal_font = ExtResource("2_kry3j")
@@ -36,17 +36,17 @@ top_level = true
 layout_mode = 0
 offset_left = -13.0
 offset_top = -28.0
-offset_right = 1187.0
-offset_bottom = 687.0
+offset_right = 1932.0
+offset_bottom = 1083.0
 color = Color(0, 0, 0, 1)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("2_jjvhh")]
-position = Vector2(672, 95)
+position = Vector2(1076, 137)
 is_pollinated = true
 plant_type = "Pumpkin"
 
 [node name="Plant2" parent="." unique_id=1843008272 instance=ExtResource("2_jjvhh")]
-position = Vector2(899, 351)
+position = Vector2(987, 614)
 plant_type = "Pumpkin"
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]

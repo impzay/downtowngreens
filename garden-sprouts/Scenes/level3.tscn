@@ -26,18 +26,20 @@ max_distance = 3145.0
 
 [node name="UI" type="Control" parent="." unique_id=543839926]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_mrxql")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=1461654113]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 452.99997
-offset_right = 312.34918
-offset_bottom = 471.25394
+offset_left = 119.0
+offset_top = 892.0
+offset_right = 325.34918
+offset_bottom = 910.25397
 scale = Vector2(2.52, 2.52)
 theme_override_colors/default_color = Color(0.35888037, 0.5349528, 0.8254725, 1)
 theme_override_fonts/normal_font = ExtResource("2_qrg6c")
@@ -49,17 +51,22 @@ z_index = 1
 layout_mode = 0
 offset_left = -13.0
 offset_top = -28.0
-offset_right = 1187.0
-offset_bottom = 687.0
+offset_right = 1975.0
+offset_bottom = 1117.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ReplayButton" type="Button" parent="UI" unique_id=455660068]
-layout_mode = 0
-offset_left = 963.0
-offset_top = 9.0
-offset_right = 1122.0
-offset_bottom = 79.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.22
+anchor_right = 1.02
+anchor_bottom = 1.0
+offset_left = 1399.0
+offset_top = 862.0
+offset_right = 1566.0
+offset_bottom = 932.0
 theme_override_fonts/font = ExtResource("2_qrg6c")
 theme_override_font_sizes/font_size = 43
 text = "Replay!"
@@ -76,20 +83,20 @@ z_index = 1
 position = Vector2(104, 339)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("4_qrg6c")]
-position = Vector2(559, 124)
+position = Vector2(704, 95)
 is_pollinated = true
 plant_type = "Carrot"
 
 [node name="Plant2" parent="." unique_id=521468968 instance=ExtResource("4_qrg6c")]
-position = Vector2(911, 195)
+position = Vector2(1568, 149)
 plant_type = "Pumpkin"
 
 [node name="Plant3" parent="." unique_id=470140327 instance=ExtResource("4_qrg6c")]
-position = Vector2(590, 502)
+position = Vector2(708, 747)
 plant_type = "Carrot"
 
 [node name="Plant4" parent="." unique_id=657675004 instance=ExtResource("4_qrg6c")]
-position = Vector2(972, 445)
+position = Vector2(1402, 699)
 is_pollinated = true
 plant_type = "Pumpkin"
 

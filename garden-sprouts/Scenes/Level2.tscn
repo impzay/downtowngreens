@@ -31,10 +31,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=431899170]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 452.99997
-offset_right = 312.34918
-offset_bottom = 471.25394
+offset_left = 84.0
+offset_top = 931.0
+offset_right = 290.34918
+offset_bottom = 949.25397
 scale = Vector2(2.52, 2.52)
 theme_override_colors/default_color = Color(0.35888037, 0.5349528, 0.8254725, 1)
 theme_override_fonts/normal_font = ExtResource("4_ng020")
@@ -46,8 +46,8 @@ z_index = 1
 layout_mode = 0
 offset_left = -13.0
 offset_top = -28.0
-offset_right = 1187.0
-offset_bottom = 687.0
+offset_right = 1936.0
+offset_bottom = 1087.0
 color = Color(0, 0, 0, 1)
 
 [node name="PauseScreen" parent="UI" unique_id=1818206211 instance=ExtResource("5_lgosu")]
@@ -59,17 +59,17 @@ offset_bottom = 225.0
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("5_vn2uo")]
 z_index = 1
-position = Vector2(73, 281)
+position = Vector2(356, 371)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("6_mtqcm")]
-position = Vector2(405, 114)
+position = Vector2(716, 168)
 is_pollinated = true
 plant_type = "Carrot"
 
 [node name="Plant2" parent="." unique_id=521468968 instance=ExtResource("6_mtqcm")]
-position = Vector2(960, 155)
+position = Vector2(1259, 274)
 plant_type = "Carrot"
 
 [node name="Plant3" parent="." unique_id=470140327 instance=ExtResource("6_mtqcm")]
-position = Vector2(710, 444)
+position = Vector2(1030, 697)
 plant_type = "Carrot"

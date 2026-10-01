@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cik0frxb4k8bs" path="res://Scripts/pollinator.gd" id="1_dkmy2"]
 [ext_resource type="Texture2D" uid="uid://benoflgth37vu" path="res://Assets/Sprites/beesheett.png" id="2_qrert"]
+[ext_resource type="Shader" uid="uid://bjdxwini7arki" path="res://glow_outline.gdshader" id="2_su87t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_su87t"]
+shader = ExtResource("2_su87t")
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+shader_parameter/glow_size = 0.0
+shader_parameter/glow_strength = 3.290000156275
+shader_parameter/samples = 4
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_su87t"]
 atlas = ExtResource("2_qrert")
@@ -47,6 +55,7 @@ height = 98.0
 script = ExtResource("1_dkmy2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1120729021]
+material = SubResource("ShaderMaterial_su87t")
 position = Vector2(0, -1)
 scale = Vector2(2.1817431, 2.1817431)
 sprite_frames = SubResource("SpriteFrames_g4v7s")

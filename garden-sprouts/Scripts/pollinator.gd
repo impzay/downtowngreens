@@ -6,6 +6,7 @@ var target_pos: Vector2 = Vector2.ZERO
 var total_plants_pollinated: int = 0;
 var held_pollen: String = "";
 var level: int = 1
+
 @export var transition_time: int
 @onready var sfx_handler = get_parent().get_node("Sound_Handler")
 @onready var sprite = $AnimatedSprite2D
@@ -111,3 +112,7 @@ func set_plant(plant):
 
 func get_plant():
 	return mouse_over_plant
+
+func set_glow(on: bool) -> void:
+	$AnimatedSprite2D.material.set_shader_parameter("glow_strength", 1.5 if on else 0.0)
+	

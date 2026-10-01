@@ -44,3 +44,5 @@ texture_hover = ExtResource("3_3u666")
 
 [node name="Quit_Button" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1118453889]
 layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
