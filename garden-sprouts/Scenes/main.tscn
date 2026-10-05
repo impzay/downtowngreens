@@ -41,12 +41,12 @@ offset_bottom = 1083.0
 color = Color(0, 0, 0, 1)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("2_jjvhh")]
-position = Vector2(1076, 137)
-is_pollinated = true
+position = Vector2(1039, 399)
 plant_type = "Pumpkin"
+is_pollinated = true
 
 [node name="Plant2" parent="." unique_id=1843008272 instance=ExtResource("2_jjvhh")]
-position = Vector2(987, 614)
+position = Vector2(969, 588)
 plant_type = "Pumpkin"
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]
@@ -66,9 +66,11 @@ max_distance = 3145.0
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=313230373]
 
 [node name="PauseScreen" parent="." unique_id=1818206211 instance=ExtResource("8_344ge")]
+visible = false
 offset_left = 278.0
 offset_top = 269.0
 offset_right = 278.0
 offset_bottom = 269.0
+metadata/_edit_lock_ = true
 
 [connection signal="finished" from="Sound_Handler/AudioStreamPlayer2D" to="Pollinator" method="_on_yay_finished"]

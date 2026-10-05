@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bd1o6uj15g1fx"]
 
+[ext_resource type="Texture2D" uid="uid://b8lb6uinwu2g6" path="res://Assets/Art/Background.png" id="1_p4u3k"]
 [ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="1_styii"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="2_lgosu"]
 [ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="3_mhlpv"]
@@ -9,6 +10,17 @@
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="6_mtqcm"]
 
 [node name="Level2" type="Node2D" unique_id=472284549]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=356663421]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_right = 1915.0
+offset_bottom = 1077.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_p4u3k")
 
 [node name="Sound_Handler" type="Node2D" parent="." unique_id=1615600936]
 script = ExtResource("1_styii")
@@ -22,6 +34,7 @@ max_distance = 3145.0
 [node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=566348799]
 
 [node name="UI" type="Control" parent="." unique_id=1353652983]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

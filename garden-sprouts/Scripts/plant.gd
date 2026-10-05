@@ -2,12 +2,21 @@ extends Node2D
 
 
 var is_selected:bool = false;
-@export var is_pollinated: bool = false; #so we can change sprite state later
-@export var plant_type: String;
 var time: float = 0.0;
 var plant = [];
 
+@export var unpollinated_texture: Texture2D
+@export var pollinated_texture: Texture2D
+@export var plant_type: String;
+@export var is_pollinated: bool = false:
+	set(value):
+		is_pollinated = value
+		plant = [plant_type, is_pollinated]
+		update_sprite() #so we can change sprite state later
 @onready var sprite = $Sprite2D
+
+# Setter swaps the sprite whenever the value changes
+
 
 func _ready():
 	add_to_group("Plants")
@@ -31,6 +40,14 @@ func start_hovering():
 	time = 1.0;
 	is_selected = true
 	
+
+func update_sprite():
+	# Setter can run before the sprite is read
+	if sprite == null:
+		return
+	sprite.texture = (pollinated_texture if is_pollinated 
+	else unpollinated_texture)
+
 func stop_hovering():
 	is_selected = false
 	sprite.modulate.a = 1.0

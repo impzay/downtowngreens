@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="1_d77hw"]
 [ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="1_mrxql"]
 [ext_resource type="Script" uid="uid://oytehwbnlmn2" path="res://Scripts/level3.gd" id="1_qrg6c"]
+[ext_resource type="Texture2D" uid="uid://b8lb6uinwu2g6" path="res://Assets/Art/Background.png" id="2_h3ll2"]
 [ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="2_jaajx"]
 [ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_qrg6c"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="3_mrxql"]
@@ -11,6 +12,16 @@
 
 [node name="Level3" type="Node2D" unique_id=472284549]
 script = ExtResource("1_qrg6c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1277723650]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1079.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h3ll2")
 
 [node name="Sound_Handler" type="Node2D" parent="." unique_id=1615600936]
 position = Vector2(31, 58)
@@ -83,20 +94,20 @@ z_index = 1
 position = Vector2(104, 339)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("4_qrg6c")]
-position = Vector2(704, 95)
+position = Vector2(711, 596)
 is_pollinated = true
 plant_type = "Carrot"
 
 [node name="Plant2" parent="." unique_id=521468968 instance=ExtResource("4_qrg6c")]
-position = Vector2(1568, 149)
+position = Vector2(1154, 608)
 plant_type = "Pumpkin"
 
 [node name="Plant3" parent="." unique_id=470140327 instance=ExtResource("4_qrg6c")]
-position = Vector2(708, 747)
+position = Vector2(613, 857)
 plant_type = "Carrot"
 
 [node name="Plant4" parent="." unique_id=657675004 instance=ExtResource("4_qrg6c")]
-position = Vector2(1402, 699)
+position = Vector2(1383, 851)
 is_pollinated = true
 plant_type = "Pumpkin"
 
