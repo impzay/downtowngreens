@@ -1,6 +1,5 @@
 extends Node2D
 
-
 var is_selected:bool = false;
 var time: float = 0.0;
 var plant = [];
