@@ -4,6 +4,8 @@ var is_selected:bool = false;
 var time: float = 0.0;
 var plant = [];
 
+@onready var pumpkin = preload("res://Scenes/pumpkin.tscn")
+
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var plant_type: String;
 @export var is_pollinated: bool = false:
@@ -43,6 +45,9 @@ func update_sprite():
 	if sprite == null:
 		return
 	sprite.play("Fertilized Flower" if is_pollinated else "Unfertilized Flower")
+	
+	print("fertilized success")
+	pumpkin.instantiate()	
 
 
 func stop_hovering():
