@@ -10,6 +10,7 @@ var level: int = 1
 @export var transition_time: int
 @onready var sfx_handler = get_parent().get_node("Sound_Handler")
 @onready var sprite = $AnimatedSprite2D
+@onready var pumpkin = preload("res://Scenes/pumpkin.tscn")
 
 func _ready() -> void:
 	pass
@@ -29,10 +30,19 @@ func _process(delta: float) -> void:
 		#task_completed()
 		
 
+func spawn_plant(pos: Vector2) -> void:
+	var pump = pumpkin.instantiate()
+	pump.top_level = true
+	pump.position = pos
+	add_child(pump)
+
 func task_completed():
 	#check if all plants are pollinated and update # of remaining plants to be pollinated
 	GameManager.total_plants_pollinated += 1;
 	print("+1 pollinated plant")
+	spawn_plant(target_pos)
+	 
+	
 	if GameManager.level == 1:
 		if GameManager.total_plants_pollinated >= 1:
 			celebrate()
