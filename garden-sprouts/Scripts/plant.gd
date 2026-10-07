@@ -4,15 +4,13 @@ var is_selected:bool = false;
 var time: float = 0.0;
 var plant = [];
 
-@export var unpollinated_texture: Texture2D
-@export var pollinated_texture: Texture2D
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var plant_type: String;
 @export var is_pollinated: bool = false:
 	set(value):
 		is_pollinated = value
 		plant = [plant_type, is_pollinated]
 		update_sprite() #so we can change sprite state later
-@onready var sprite = $Sprite2D
 
 # Setter swaps the sprite whenever the value changes
 
@@ -44,8 +42,8 @@ func update_sprite():
 	# Setter can run before the sprite is read
 	if sprite == null:
 		return
-	sprite.texture = (pollinated_texture if is_pollinated 
-	else unpollinated_texture)
+	sprite.play("Fertilized Flower" if is_pollinated else "Unfertilized Flower")
+
 
 func stop_hovering():
 	is_selected = false

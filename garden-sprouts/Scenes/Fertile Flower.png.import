@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7vwdq1cwuww6"
-path="res://.godot/imported/Unfertilized Flower.png-e7dd6466bdaead5fd51d9e333c7e6eb1.ctex"
+uid="uid://b5n0usjbsmj2u"
+path="res://.godot/imported/Fertile Flower.png-4b6120d7d7477d5b6a8c9d544cdda286.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Unfertilized Flower.png"
-dest_files=["res://.godot/imported/Unfertilized Flower.png-e7dd6466bdaead5fd51d9e333c7e6eb1.ctex"]
+source_file="res://Scenes/Fertile Flower.png"
+dest_files=["res://.godot/imported/Fertile Flower.png-4b6120d7d7477d5b6a8c9d544cdda286.ctex"]
 
 [params]
 

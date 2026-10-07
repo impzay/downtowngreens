@@ -1,10 +1,30 @@
 [gd_scene format=3 uid="uid://pomuvcnko6ij"]
 
 [ext_resource type="Script" uid="uid://dcbe53nf5xka4" path="res://Scripts/plant.gd" id="1_mbetm"]
-[ext_resource type="Texture2D" uid="uid://dwp7ptpa2pg76" path="res://Assets/Sprites/Fertile Flower.png" id="2_6gypx"]
+[ext_resource type="Texture2D" uid="uid://dmk8o5qi4eu4s" path="res://Assets/Sprites/Fertile Flower.png" id="2_6gypx"]
+[ext_resource type="Texture2D" uid="uid://7vwdq1cwuww6" path="res://Assets/Sprites/Unfertilized Flower.png" id="3_8frh5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_274dd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6gypx")
+}],
+"loop": 1,
+"name": &"Fertilized Flower",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8frh5")
+}],
+"loop": 1,
+"name": &"Unfertilized Flower",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(29, 76)
+size = Vector2(32.68293, 79.85367)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(117, 146.875)
@@ -13,21 +33,21 @@ size = Vector2(117, 146.875)
 scale = Vector2(1.6399999, 1.6399999)
 script = ExtResource("1_mbetm")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1958647453]
-position = Vector2(-0.9999962, 5)
-scale = Vector2(0.9107291, 0.8203126)
-texture = ExtResource("2_6gypx")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=178967460]
+position = Vector2(-0.9999962, -11.204269)
+scale = Vector2(0.9107291, 1.326696)
+sprite_frames = SubResource("SpriteFrames_274dd")
+animation = &"Unfertilized Flower"
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1805816403]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=442467576]
-position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Zone" type="Area2D" parent="." unique_id=863941260]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zone" unique_id=1580909420]
-position = Vector2(1, 0)
+position = Vector2(-0.60975623, 0.6097562)
 shape = SubResource("RectangleShape2D_yf5fn")
 debug_color = Color(0.99607843, 0, 0.20392157, 0.16470589)
 

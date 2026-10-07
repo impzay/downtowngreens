@@ -13,6 +13,7 @@
 script = ExtResource("1_6bp64")
 
 [node name="UI" type="Control" parent="." unique_id=111675621]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -46,7 +47,7 @@ plant_type = "Pumpkin"
 is_pollinated = true
 
 [node name="Plant2" parent="." unique_id=1843008272 instance=ExtResource("2_jjvhh")]
-position = Vector2(969, 588)
+position = Vector2(868.00006, 681)
 plant_type = "Pumpkin"
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]
