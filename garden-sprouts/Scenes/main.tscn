@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="1_21xkr"]
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="2_jjvhh"]
 [ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_kry3j"]
+[ext_resource type="Texture2D" uid="uid://eqvpgf1oacgw" path="res://Assets/Art/greensbg.png" id="2_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="3_kry3j"]
 [ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="5_6bp64"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="5_kry3j"]
@@ -11,6 +12,12 @@
 
 [node name="Main" type="Node2D" unique_id=268824148]
 script = ExtResource("1_6bp64")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=340426510]
+offset_left = -1.0
+offset_right = 1919.0
+offset_bottom = 1080.0
+texture = ExtResource("2_ynf5e")
 
 [node name="UI" type="Control" parent="." unique_id=111675621]
 visible = false
@@ -42,16 +49,16 @@ offset_bottom = 1083.0
 color = Color(0, 0, 0, 1)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("2_jjvhh")]
-position = Vector2(1039, 399)
+position = Vector2(1631.0001, 792)
 plant_type = "Pumpkin"
 is_pollinated = true
 
 [node name="Plant2" parent="." unique_id=1843008272 instance=ExtResource("2_jjvhh")]
-position = Vector2(868.00006, 681)
+position = Vector2(1363, 689.00006)
 plant_type = "Pumpkin"
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]
-position = Vector2(271, 176)
+position = Vector2(739, 468)
 transition_time = 1
 
 [node name="Sound_Handler" type="Node2D" parent="." unique_id=809176311]

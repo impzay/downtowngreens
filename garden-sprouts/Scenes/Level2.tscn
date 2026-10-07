@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhu6drpjcp78y"]
 
-[ext_resource type="Texture2D" uid="uid://b8lb6uinwu2g6" path="res://Assets/Art/Background.png" id="1_p4u3k"]
+[ext_resource type="Texture2D" uid="uid://eqvpgf1oacgw" path="res://Assets/Art/greensbg.png" id="1_p4u3k"]
 [ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="1_styii"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="2_lgosu"]
 [ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="3_mhlpv"]
@@ -72,17 +72,17 @@ offset_bottom = 225.0
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("5_vn2uo")]
 z_index = 1
-position = Vector2(356, 371)
+position = Vector2(631, 532)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("6_mtqcm")]
-position = Vector2(716, 168)
-is_pollinated = true
+position = Vector2(1371, 686)
 plant_type = "Carrot"
+is_pollinated = true
 
 [node name="Plant2" parent="." unique_id=521468968 instance=ExtResource("6_mtqcm")]
-position = Vector2(1259, 274)
+position = Vector2(1636.0001, 788)
 plant_type = "Carrot"
 
 [node name="Plant3" parent="." unique_id=470140327 instance=ExtResource("6_mtqcm")]
-position = Vector2(1030, 697)
+position = Vector2(581, 785.00006)
 plant_type = "Carrot"
