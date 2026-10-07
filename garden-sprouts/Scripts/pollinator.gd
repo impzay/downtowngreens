@@ -6,10 +6,18 @@ var target_pos: Vector2 = Vector2.ZERO
 var total_plants_pollinated: int = 0;
 var held_pollen: String = "";
 var level: int = 1
+
 @export var transition_time: int
-@onready var sfx_handler = $Sound_Handler
+@onready var sfx_handler = get_parent().get_node("Sound_Handler")
+@onready var sprite = $AnimatedSprite2D
+
+func _ready() -> void:
+	pass
 
 func _process(delta: float) -> void:
+	if GameManager.paused:
+		return
+	
 	if !is_moving:
 		return
 	
@@ -47,6 +55,7 @@ func celebrate():
 
 func win():
 	print("you win!")
+	GameManager.game_won = true
 	#play again button pops up 
 	
 func play_sound(sound_name : String):
@@ -65,6 +74,9 @@ func _input(inp: InputEvent) -> void:
 		
 		#are you hovering over a plant? if plant is not pollinated, pollinate it, 
 		if mouse_over_plant: 
+			if GameManager.paused:
+				return
+				
 			if held_pollen != mouse_over_plant[0] and !mouse_over_plant[1]:
 				print("you dont have this plants pollen");
 				return
@@ -100,3 +112,7 @@ func set_plant(plant):
 
 func get_plant():
 	return mouse_over_plant
+
+func set_glow(on: bool) -> void:
+	$AnimatedSprite2D.material.set_shader_parameter("glow_strength", 1.5 if on else 0.0)
+	

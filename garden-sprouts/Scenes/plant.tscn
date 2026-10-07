@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://pomuvcnko6ij"]
 
 [ext_resource type="Script" uid="uid://dcbe53nf5xka4" path="res://Scripts/plant.gd" id="1_mbetm"]
-[ext_resource type="Texture2D" uid="uid://frctku8m0oo0" path="res://Assets/Sprites/icon.svg" id="1_t03al"]
+[ext_resource type="Texture2D" uid="uid://dwp7ptpa2pg76" path="res://Assets/Sprites/Fertile Flower.png" id="2_6gypx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(29, 76)
@@ -10,12 +10,13 @@ size = Vector2(29, 76)
 size = Vector2(117, 146.875)
 
 [node name="Plant" type="Node2D" unique_id=16015361]
+scale = Vector2(1.6399999, 1.6399999)
 script = ExtResource("1_mbetm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1958647453]
-position = Vector2(-0.99999905, 2.4999979)
-scale = Vector2(0.328125, 0.8203126)
-texture = ExtResource("1_t03al")
+position = Vector2(-0.9999962, 5)
+scale = Vector2(0.9107291, 0.8203126)
+texture = ExtResource("2_6gypx")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1805816403]
 

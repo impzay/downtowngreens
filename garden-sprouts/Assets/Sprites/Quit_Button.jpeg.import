@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://frctku8m0oo0"
-path="res://.godot/imported/icon.svg-937281dbc6e7ba0435124e30fe85aebc.ctex"
+uid="uid://cp8beawg2mxbr"
+path="res://.godot/imported/Quit_Button.jpeg-644e50520bb99d6bc28861c36a66e1c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-937281dbc6e7ba0435124e30fe85aebc.ctex"]
+source_file="res://Assets/Sprites/Quit_Button.jpeg"
+dest_files=["res://.godot/imported/Quit_Button.jpeg-644e50520bb99d6bc28861c36a66e1c0.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

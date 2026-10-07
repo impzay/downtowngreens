@@ -2,27 +2,55 @@
 
 [ext_resource type="PackedScene" uid="uid://c0x216xvxywlj" path="res://Scenes/pollinator.tscn" id="1_d77hw"]
 [ext_resource type="Script" uid="uid://dwu8h1syg1nsv" path="res://Scripts/ui.gd" id="1_mrxql"]
+[ext_resource type="Script" uid="uid://oytehwbnlmn2" path="res://Scripts/level3.gd" id="1_qrg6c"]
+[ext_resource type="Texture2D" uid="uid://b8lb6uinwu2g6" path="res://Assets/Art/Background.png" id="2_h3ll2"]
 [ext_resource type="Script" uid="uid://3df3y2sllgny" path="res://Scripts/sound_handler.gd" id="2_jaajx"]
 [ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="2_qrg6c"]
 [ext_resource type="AudioStream" uid="uid://bhgdgr5xeor6s" path="res://Assets/Sound/yay.mp3" id="3_mrxql"]
 [ext_resource type="PackedScene" uid="uid://pomuvcnko6ij" path="res://Scenes/plant.tscn" id="4_qrg6c"]
+[ext_resource type="PackedScene" uid="uid://dpe43tjbujvfj" path="res://Scenes/pause_screen.tscn" id="6_1x0xh"]
 
 [node name="Level3" type="Node2D" unique_id=472284549]
+script = ExtResource("1_qrg6c")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1277723650]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1079.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_h3ll2")
+
+[node name="Sound_Handler" type="Node2D" parent="." unique_id=1615600936]
+position = Vector2(31, 58)
+script = ExtResource("2_jaajx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=52113329]
+stream = ExtResource("3_mrxql")
+volume_db = 1.083
+pitch_scale = 1.4
+max_distance = 3145.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Sound_Handler" unique_id=566348799]
 
 [node name="UI" type="Control" parent="." unique_id=543839926]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_mrxql")
 metadata/_edit_use_anchors_ = true
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI" unique_id=1461654113]
 layout_mode = 0
-offset_left = 106.0
-offset_top = 452.99997
-offset_right = 312.34918
-offset_bottom = 471.25394
+offset_left = 119.0
+offset_top = 892.0
+offset_right = 325.34918
+offset_bottom = 910.25397
 scale = Vector2(2.52, 2.52)
 theme_override_colors/default_color = Color(0.35888037, 0.5349528, 0.8254725, 1)
 theme_override_fonts/normal_font = ExtResource("2_qrg6c")
@@ -30,42 +58,57 @@ text = "click plant to pollinate"
 
 [node name="ColorRect" type="ColorRect" parent="UI" unique_id=2022805863]
 top_level = true
+z_index = 1
 layout_mode = 0
 offset_left = -13.0
 offset_top = -28.0
-offset_right = 1187.0
-offset_bottom = 687.0
+offset_right = 1975.0
+offset_bottom = 1117.0
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
+[node name="ReplayButton" type="Button" parent="UI" unique_id=455660068]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.312
+anchor_top = 0.22
+anchor_right = 1.02
+anchor_bottom = 1.0
+offset_left = 1399.0
+offset_top = 862.0
+offset_right = 1566.0
+offset_bottom = 932.0
+theme_override_fonts/font = ExtResource("2_qrg6c")
+theme_override_font_sizes/font_size = 43
+text = "Replay!"
+
+[node name="PauseScreen" parent="UI" unique_id=1818206211 instance=ExtResource("6_1x0xh")]
+layout_mode = 1
+offset_left = 504.0
+offset_top = 294.0
+offset_right = 504.0
+offset_bottom = 294.0
+
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("1_d77hw")]
+z_index = 1
 position = Vector2(104, 339)
 
-[node name="Sound_Handler" type="Node2D" parent="Pollinator" unique_id=1615600936]
-position = Vector2(-73, -281)
-script = ExtResource("2_jaajx")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=52113329]
-stream = ExtResource("3_mrxql")
-volume_db = 1.083
-pitch_scale = 1.4
-max_distance = 3145.0
-
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="Pollinator/Sound_Handler" unique_id=566348799]
-
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("4_qrg6c")]
-position = Vector2(559, 124)
+position = Vector2(711, 596)
 is_pollinated = true
 plant_type = "Carrot"
 
 [node name="Plant2" parent="." unique_id=521468968 instance=ExtResource("4_qrg6c")]
-position = Vector2(911, 195)
+position = Vector2(1154, 608)
 plant_type = "Pumpkin"
 
 [node name="Plant3" parent="." unique_id=470140327 instance=ExtResource("4_qrg6c")]
-position = Vector2(590, 502)
+position = Vector2(613, 857)
 plant_type = "Carrot"
 
 [node name="Plant4" parent="." unique_id=657675004 instance=ExtResource("4_qrg6c")]
-position = Vector2(972, 445)
+position = Vector2(1383, 851)
 is_pollinated = true
 plant_type = "Pumpkin"
+
+[connection signal="pressed" from="UI/ReplayButton" to="." method="_on_replay_button_pressed"]

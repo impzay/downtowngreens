@@ -8,12 +8,13 @@ var fade_in: bool = false #true = fade to black, false = fade from black
 var time: float = 0.0
 
 func _ready() -> void:
-	pass
+	fade_out()
+	
 func _process(delta):
 	if !is_fading:
 		return
 	
-	time += delta * 0.9
+	time += delta * 1.0
 	time = clamp(time, 0.0, 1.0)
 	
 	if fade_in:
