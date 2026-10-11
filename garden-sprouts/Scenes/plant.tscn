@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dcbe53nf5xka4" path="res://Scripts/plant.gd" id="1_mbetm"]
 [ext_resource type="Texture2D" uid="uid://dmk8o5qi4eu4s" path="res://Assets/Sprites/Fertile Flower.png" id="2_6gypx"]
 [ext_resource type="Texture2D" uid="uid://7vwdq1cwuww6" path="res://Assets/Sprites/Unfertilized Flower.png" id="3_8frh5"]
+[ext_resource type="Texture2D" uid="uid://pcdapo86p33k" path="res://Assets/Sprites/Fertile Flower Effect.png" id="4_wt21e"]
+[ext_resource type="Texture2D" uid="uid://b7tqmudjl62ts" path="res://Assets/Sprites/Glow Effect.png" id="5_ujn7j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_274dd"]
 animations = [{
@@ -29,6 +31,9 @@ size = Vector2(32.68293, 79.85367)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(117, 146.875)
 
+[sub_resource type="Gradient" id="Gradient_274dd"]
+colors = PackedColorArray(1, 1, 1, 1, 0.40069774, 0.40069774, 0.40069768, 0.15686275)
+
 [node name="Plant" type="Node2D" unique_id=16015361]
 scale = Vector2(1.6399999, 1.6399999)
 script = ExtResource("1_mbetm")
@@ -37,7 +42,7 @@ script = ExtResource("1_mbetm")
 position = Vector2(-0.9999962, -11.204269)
 scale = Vector2(0.9107291, 1.326696)
 sprite_frames = SubResource("SpriteFrames_274dd")
-animation = &"Unfertilized Flower"
+animation = &"Fertilized Flower"
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1805816403]
 
@@ -50,6 +55,43 @@ shape = SubResource("RectangleShape2D_g4v7s")
 position = Vector2(-0.60975623, 0.6097562)
 shape = SubResource("RectangleShape2D_yf5fn")
 debug_color = Color(0.99607843, 0, 0.20392157, 0.16470589)
+
+[node name="NoPollen_Effect" type="CPUParticles2D" parent="." unique_id=1304747095]
+texture = ExtResource("4_wt21e")
+lifetime = 3.0
+emission_shape = 1
+emission_sphere_radius = 38.86
+direction = Vector2(1, -50)
+spread = 58.95
+gravity = Vector2(60, 40)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+damping_min = 5.0
+damping_max = 11.479
+angle_max = 360.0
+color_ramp = SubResource("Gradient_274dd")
+
+[node name="HasPollen_Effect" type="CPUParticles2D" parent="." unique_id=743570386]
+amount = 12
+texture = ExtResource("5_ujn7j")
+lifetime = 3.0
+emission_shape = 1
+emission_sphere_radius = 80.32
+direction = Vector2(1, -20)
+spread = 180.0
+gravity = Vector2(60, 40)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+damping_min = 5.0
+damping_max = 11.479
+angle_max = 360.0
+scale_amount_min = 0.0
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_274dd")
 
 [connection signal="mouse_entered" from="Zone" to="." method="_on_zone_mouse_entered"]
 [connection signal="mouse_exited" from="Zone" to="." method="_on_zone_mouse_exited"]

@@ -4,8 +4,9 @@ var is_selected:bool = false;
 var time: float = 0.0;
 var plant = [];
 
+@onready var petals: CPUParticles2D = $NoPollen_Effect
+@onready var sparkles: CPUParticles2D = $HasPollen_Effect
 @onready var pumpkin = preload("res://Scenes/pumpkin.tscn")
-
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var plant_type: String;
 @export var is_pollinated: bool = false:
@@ -23,7 +24,8 @@ func _ready():
 	plant = [plant_type,is_pollinated];
 	mouse_entered_plant.connect(pollinator._on_mouse_entered_plant)
 	mouse_exited_plant.connect(pollinator._on_mouse_exited_plant)
-	
+	update_sprite()
+
 
 func _process(delta: float) -> void:
 	if is_selected:
@@ -34,7 +36,7 @@ func _process(delta: float) -> void:
 		#+1 gives you 0 to 1
 		#divide by 4 gives you 0 to 0.5
 		#+0.5 gives you 0.5 to 1
-
+	
 func start_hovering():
 	time = 1.0;
 	is_selected = true
@@ -45,7 +47,8 @@ func update_sprite():
 	if sprite == null:
 		return
 	sprite.play("Fertilized Flower" if is_pollinated else "Unfertilized Flower")
-	
+	petals.emitting = not is_pollinated
+	sparkles.emitting = is_pollinated
 	print("fertilized success")
 	pumpkin.instantiate()	
 
