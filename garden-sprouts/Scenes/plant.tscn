@@ -57,6 +57,7 @@ shape = SubResource("RectangleShape2D_yf5fn")
 debug_color = Color(0.99607843, 0, 0.20392157, 0.16470589)
 
 [node name="NoPollen_Effect" type="CPUParticles2D" parent="." unique_id=1304747095]
+visible = false
 texture = ExtResource("4_wt21e")
 lifetime = 3.0
 emission_shape = 1
@@ -74,6 +75,7 @@ angle_max = 360.0
 color_ramp = SubResource("Gradient_274dd")
 
 [node name="HasPollen_Effect" type="CPUParticles2D" parent="." unique_id=743570386]
+position = Vector2(-7.98, -10.98)
 amount = 12
 texture = ExtResource("5_ujn7j")
 lifetime = 3.0
@@ -88,6 +90,7 @@ angular_velocity_min = -180.0
 angular_velocity_max = 180.0
 damping_min = 5.0
 damping_max = 11.479
+angle_min = -704.0
 angle_max = 360.0
 scale_amount_min = 0.0
 scale_amount_max = 0.5
