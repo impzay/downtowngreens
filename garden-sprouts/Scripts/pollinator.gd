@@ -11,6 +11,8 @@ var level: int = 1
 @onready var sfx_handler = get_parent().get_node("Sound_Handler")
 @onready var sprite = $AnimatedSprite2D
 @onready var pumpkin = preload("res://Scenes/pumpkin.tscn")
+@export var pumpkin_offset: Vector2 = Vector2(0, 30)
+var pollinate_on_arrival: bool = false
 
 func _ready() -> void:
 	pass
@@ -27,21 +29,21 @@ func _process(delta: float) -> void:
 	#task gets completed if a plant is successfully pollinated.
 	if position.distance_to(target_pos) < 15.0:
 		is_moving = false
-		#task_completed()
-		
+		if pollinate_on_arrival:
+			pollinate_on_arrival = false
+			task_completed(target_pos)
+			
 
 func spawn_plant(pos: Vector2) -> void:
 	var pump = pumpkin.instantiate()
 	pump.top_level = true
-	pump.position = pos
+	pump.position = pos + pumpkin_offset
 	add_child(pump)
 
-func task_completed():
-	#check if all plants are pollinated and update # of remaining plants to be pollinated
-	GameManager.total_plants_pollinated += 1;
-	print("+1 pollinated plant")
-	spawn_plant(target_pos)
-	 
+func task_completed(pos: Vector2):
+	GameManager.total_plants_pollinated += 1
+	spawn_plant(pos)
+	#check if all plants are pollinated and update # of remaining plants to be pollinated	 
 	
 	if GameManager.level == 1:
 		if GameManager.total_plants_pollinated >= 1:
@@ -78,10 +80,7 @@ func move(new_pos):
 func _input(inp: InputEvent) -> void:
 	if inp is InputEventMouseButton and inp.button_index == MOUSE_BUTTON_LEFT and inp.pressed:
 		play_sound("button_click")
-		
 		#checks for correct pollen matchups
-		
-		
 		#are you hovering over a plant? if plant is not pollinated, pollinate it, 
 		if mouse_over_plant: 
 			if GameManager.paused:
@@ -93,8 +92,8 @@ func _input(inp: InputEvent) -> void:
 			
 			if mouse_over_plant[1] == false:
 				mouse_over_plant[1] = true
-				task_completed()
-			set_pollen(mouse_over_plant) 
+				pollinate_on_arrival = true
+			set_pollen(mouse_over_plant)
 			self.move(inp.position)
 
 
