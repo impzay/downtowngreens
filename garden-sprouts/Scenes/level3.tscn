@@ -102,10 +102,12 @@ is_pollinated = true
 [node name="Plant2" parent="." unique_id=521468968 instance=ExtResource("4_qrg6c")]
 position = Vector2(395.00003, 779)
 plant_type = "Pumpkin"
+state = 0
 
 [node name="Plant3" parent="." unique_id=470140327 instance=ExtResource("4_qrg6c")]
 position = Vector2(620.00006, 778)
 plant_type = "Carrot"
+state = 0
 
 [node name="Plant4" parent="." unique_id=657675004 instance=ExtResource("4_qrg6c")]
 position = Vector2(1633, 799.00006)

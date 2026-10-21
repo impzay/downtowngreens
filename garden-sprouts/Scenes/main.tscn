@@ -56,6 +56,8 @@ is_pollinated = true
 [node name="Plant2" parent="." unique_id=1843008272 instance=ExtResource("2_jjvhh")]
 position = Vector2(1363, 689.00006)
 plant_type = "Pumpkin"
+pump_offset = Vector2(25, 100)
+state = 0
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("3_kry3j")]
 position = Vector2(739, 468)

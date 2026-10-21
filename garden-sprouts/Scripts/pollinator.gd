@@ -1,6 +1,7 @@
 extends Node2D
 
 var mouse_over_plant = null
+var target_plant = null
 var is_moving: bool = false
 var target_pos: Vector2 = Vector2.ZERO
 var total_plants_pollinated: int = 0;
@@ -31,18 +32,14 @@ func _process(delta: float) -> void:
 		is_moving = false
 		if pollinate_on_arrival:
 			pollinate_on_arrival = false
+			target_plant.pollinate()
+			target_plant = null
 			task_completed(target_pos)
 			
 
-func spawn_plant(pos: Vector2) -> void:
-	var pump = pumpkin.instantiate()
-	pump.top_level = true
-	pump.position = pos + pumpkin_offset
-	#add_child(pump)
-
 func task_completed(pos: Vector2):
 	GameManager.total_plants_pollinated += 1
-	spawn_plant(pos)
+	
 	#check if all plants are pollinated and update # of remaining plants to be pollinated	 
 	
 	if GameManager.level == 1:
@@ -62,7 +59,6 @@ func task_completed(pos: Vector2):
 			
 func celebrate():
 	play_sound("yay")
-	
 	#add celebration animation here
 
 func win():
@@ -91,10 +87,12 @@ func _input(inp: InputEvent) -> void:
 				return
 			
 			if mouse_over_plant.is_pollinated == false:  #if the plant is not pollinated
-				mouse_over_plant.pollinate()
+				held_pollen = ""
+				target_plant = mouse_over_plant
 				pollinate_on_arrival = true
-			set_pollen(mouse_over_plant)
-			self.move(inp.position)
+			else:
+				set_pollen(mouse_over_plant)
+			move(inp.position)
 
 
 	
