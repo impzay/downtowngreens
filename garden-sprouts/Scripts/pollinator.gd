@@ -13,6 +13,9 @@ var level: int = 1
 @onready var sprite = $AnimatedSprite2D
 @onready var pumpkin = preload("res://Scenes/pumpkin.tscn")
 @export var pumpkin_offset: Vector2 = Vector2(0, 30)
+@onready var beehive_pos = %Beehive
+
+
 var pollinate_on_arrival: bool = false
 
 func _ready() -> void:
@@ -35,6 +38,8 @@ func _process(delta: float) -> void:
 			target_plant.pollinate()
 			target_plant = null
 			task_completed(target_pos)
+		move(beehive_pos.global_position)
+		
 			
 
 func task_completed(pos: Vector2):
@@ -72,6 +77,7 @@ func play_sound(sound_name : String):
 func move(new_pos):
 	target_pos = new_pos
 	is_moving = true
+	#play_sound("flying")
 
 func _input(inp: InputEvent) -> void:
 	if inp is InputEventMouseButton and inp.button_index == MOUSE_BUTTON_LEFT and inp.pressed:

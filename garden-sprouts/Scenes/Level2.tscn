@@ -72,7 +72,7 @@ offset_bottom = 225.0
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("5_vn2uo")]
 z_index = 1
-position = Vector2(631, 532)
+position = Vector2(730, 467)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("6_mtqcm")]
 position = Vector2(1371, 686)
@@ -88,3 +88,7 @@ state = 0
 position = Vector2(581, 785.00006)
 plant_type = "Carrot"
 state = 0
+
+[node name="Beehive" type="Marker2D" parent="." unique_id=1401373505]
+unique_name_in_owner = true
+position = Vector2(736, 469)

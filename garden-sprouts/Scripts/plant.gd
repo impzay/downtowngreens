@@ -28,11 +28,6 @@ func _process(delta: float) -> void:
 	if is_selected:
 		time += delta
 		sprite.modulate.a = (sin(time * 3.0) + 1.0) / 4.0 + 0.5	
-		#sin gives you a range from -1 to 1
-		#time * 3.0 <- speed
-		#+1 gives you 0 to 1
-		#divide by 4 gives you 0 to 0.5
-		#+0.5 gives you 0.5 to 1
 	
 func start_hovering():
 	time = 1.0;
@@ -48,6 +43,7 @@ func update_sprite():
 			sprite.play("Unfertilized Flower")
 		State.HAPPY:
 			sprite.play("Fertilized Flower")
+	
 	petals.emitting = state == State.SAD
 	sparkles.emitting = state == State.HAPPY
 	
@@ -58,8 +54,7 @@ func grow():
 	var pump = pumpkin.instantiate()
 	pump.position = pump_spawn.global_position
 	get_parent().add_child(pump)
-	
-	#update_sprite()
+
 
 func stop_hovering():
 	is_selected = false
@@ -79,6 +74,7 @@ func _on_zone_mouse_exited() -> void:
 func pollinate() -> void:
 	if state != State.SAD:
 		return
+		
 	is_pollinated = true
 	state = State.GROWING
 	await grow()

@@ -92,7 +92,7 @@ offset_bottom = 294.0
 
 [node name="Pollinator" parent="." unique_id=741083609 instance=ExtResource("1_d77hw")]
 z_index = 1
-position = Vector2(104, 339)
+position = Vector2(709, 463)
 
 [node name="Plant" parent="." unique_id=16015361 instance=ExtResource("4_qrg6c")]
 position = Vector2(1370, 696)
@@ -113,5 +113,9 @@ state = 0
 position = Vector2(1633, 799.00006)
 plant_type = "Pumpkin"
 is_pollinated = true
+
+[node name="Beehive" type="Marker2D" parent="." unique_id=1745305626]
+unique_name_in_owner = true
+position = Vector2(708, 463)
 
 [connection signal="pressed" from="UI/ReplayButton" to="." method="_on_replay_button_pressed"]
