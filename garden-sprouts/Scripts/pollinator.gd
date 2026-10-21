@@ -38,7 +38,7 @@ func spawn_plant(pos: Vector2) -> void:
 	var pump = pumpkin.instantiate()
 	pump.top_level = true
 	pump.position = pos + pumpkin_offset
-	add_child(pump)
+	#add_child(pump)
 
 func task_completed(pos: Vector2):
 	GameManager.total_plants_pollinated += 1
@@ -86,12 +86,12 @@ func _input(inp: InputEvent) -> void:
 			if GameManager.paused:
 				return
 				
-			if held_pollen != mouse_over_plant[0] and !mouse_over_plant[1]:
+			if held_pollen != mouse_over_plant.plant_type and !mouse_over_plant.is_pollinated:
 				print("you dont have this plants pollen");
 				return
 			
-			if mouse_over_plant[1] == false:
-				mouse_over_plant[1] = true
+			if mouse_over_plant.is_pollinated == false:  #if the plant is not pollinated
+				mouse_over_plant.pollinate()
 				pollinate_on_arrival = true
 			set_pollen(mouse_over_plant)
 			self.move(inp.position)
@@ -109,7 +109,7 @@ func set_pollen(plant):
 	if plant == null:
 		return
 	
-	held_pollen = plant[0]
+	held_pollen = plant.plant_type
 	print("Updated held pollen to ", held_pollen)
 	
 func get_pollen():

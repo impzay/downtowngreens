@@ -1,16 +1,130 @@
 [gd_scene format=3 uid="uid://pomuvcnko6ij"]
 
 [ext_resource type="Script" uid="uid://dcbe53nf5xka4" path="res://Scripts/plant.gd" id="1_mbetm"]
-[ext_resource type="Texture2D" uid="uid://dmk8o5qi4eu4s" path="res://Assets/Sprites/Fertile Flower.png" id="2_6gypx"]
-[ext_resource type="Texture2D" uid="uid://7vwdq1cwuww6" path="res://Assets/Sprites/Unfertilized Flower.png" id="3_8frh5"]
+[ext_resource type="Texture2D" uid="uid://c3fjbu0p3wt8d" path="res://Assets/Sprites/happy_flower.png" id="2_fl1so"]
+[ext_resource type="Texture2D" uid="uid://bopxnatnv10ke" path="res://Assets/Sprites/pumpkin_flower.png" id="3_b4bfk"]
+[ext_resource type="Texture2D" uid="uid://dvohwbo0rbqna" path="res://Assets/Sprites/sad_flower.png" id="4_2oxh0"]
 [ext_resource type="Texture2D" uid="uid://pcdapo86p33k" path="res://Assets/Sprites/Fertile Flower Effect.png" id="4_wt21e"]
 [ext_resource type="Texture2D" uid="uid://b7tqmudjl62ts" path="res://Assets/Sprites/Glow Effect.png" id="5_ujn7j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guixl"]
+atlas = ExtResource("2_fl1so")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thy18"]
+atlas = ExtResource("2_fl1so")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvlid"]
+atlas = ExtResource("2_fl1so")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msuq2"]
+atlas = ExtResource("2_fl1so")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8v4g"]
+atlas = ExtResource("2_fl1so")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ma7eo"]
+atlas = ExtResource("2_fl1so")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n383k"]
+atlas = ExtResource("2_fl1so")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cmuo"]
+atlas = ExtResource("2_fl1so")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_co2aj"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in7y5"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iaylx"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xb2r1"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rw6rb"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_shlar"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ij17x"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sttmf"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2gkj"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni3p3"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ljwp"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xoik7"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvk64"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do2kj"]
+atlas = ExtResource("3_b4bfk")
+region = Rect2(832, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dip7q"]
+atlas = ExtResource("4_2oxh0")
+region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_274dd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_6gypx")
+"texture": SubResource("AtlasTexture_guixl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thy18")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvlid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msuq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8v4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ma7eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n383k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cmuo")
 }],
 "loop": 1,
 "name": &"Fertilized Flower",
@@ -18,7 +132,54 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_8frh5")
+"texture": SubResource("AtlasTexture_co2aj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in7y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iaylx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xb2r1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rw6rb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_shlar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ij17x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sttmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2gkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni3p3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ljwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xoik7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvk64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do2kj")
+}],
+"loop": 0,
+"name": &"Growing_Pumpkin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dip7q")
 }],
 "loop": 1,
 "name": &"Unfertilized Flower",
@@ -39,10 +200,10 @@ scale = Vector2(1.6399999, 1.6399999)
 script = ExtResource("1_mbetm")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=178967460]
-position = Vector2(-0.9999962, -11.204269)
-scale = Vector2(0.9107291, 1.326696)
+position = Vector2(17.682926, -95.73172)
+scale = Vector2(4.3093033, 4.2258773)
 sprite_frames = SubResource("SpriteFrames_274dd")
-animation = &"Fertilized Flower"
+animation = &"Unfertilized Flower"
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1805816403]
 

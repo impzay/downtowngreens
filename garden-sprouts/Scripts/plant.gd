@@ -2,30 +2,23 @@ extends Node2D
 
 var is_selected:bool = false;
 var time: float = 0.0;
-var plant = [];
 
 @onready var petals: CPUParticles2D = $NoPollen_Effect
 @onready var sparkles: CPUParticles2D = $HasPollen_Effect
 @onready var pumpkin = preload("res://Scenes/pumpkin.tscn")
 @onready var sprite: AnimatedSprite2D = $Sprite2D
 @export var plant_type: String;
-@export var is_pollinated: bool = false:
-	set(value):
-		is_pollinated = value
-		plant = [plant_type, is_pollinated]
-		update_sprite() #so we can change sprite state later
-
-# Setter swaps the sprite whenever the value changes
-
-
+@export var is_pollinated: bool = false
+	
 func _ready():
 	add_to_group("Plants")
+	
 	var pollinator = get_parent().get_node("Pollinator")
-	plant = [plant_type,is_pollinated];
+
 	mouse_entered_plant.connect(pollinator._on_mouse_entered_plant)
 	mouse_exited_plant.connect(pollinator._on_mouse_exited_plant)
 	update_sprite()
-
+	
 
 func _process(delta: float) -> void:
 	if is_selected:
@@ -43,27 +36,34 @@ func start_hovering():
 	
 
 func update_sprite():
-	# Setter can run before the sprite is read
 	if sprite == null:
 		return
-	sprite.play("Fertilized Flower" if is_pollinated else "Unfertilized Flower")
+	
+	if is_pollinated:
+		sprite.play("Fertilized Flower")
+	else:
+		sprite.play("Unfertilized Flower")
+	
 	petals.emitting = not is_pollinated
 	sparkles.emitting = is_pollinated
-	print("fertilized success")
-	pumpkin.instantiate()	
+	#pumpkin.instantiate()	
 
 
 func stop_hovering():
 	is_selected = false
 	sprite.modulate.a = 1.0
 	
-signal mouse_entered_plant(plant);
-signal mouse_exited_plant(plant);
+signal mouse_entered_plant();
+signal mouse_exited_plant();
 	
 func _on_zone_mouse_entered() -> void:
 	start_hovering();
-	mouse_entered_plant.emit(plant)
+	mouse_entered_plant.emit(self)
 
 func _on_zone_mouse_exited() -> void:
 	stop_hovering();
-	mouse_exited_plant.emit(plant)
+	mouse_exited_plant.emit(self)
+
+func pollinate() -> void:
+	is_pollinated = true
+	update_sprite()
