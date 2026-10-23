@@ -186,9 +186,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(32.68293, 79.85367)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(117, 146.875)
 
@@ -204,11 +201,6 @@ position = Vector2(17.682926, -95.73172)
 scale = Vector2(4.3093033, 4.2258773)
 sprite_frames = SubResource("SpriteFrames_274dd")
 animation = &"Unfertilized Flower"
-
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1805816403]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=442467576]
-shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Zone" type="Area2D" parent="." unique_id=863941260]
 
@@ -259,7 +251,7 @@ color_ramp = SubResource("Gradient_274dd")
 
 [node name="PumpkinSpawn" type="Marker2D" parent="." unique_id=611906267]
 unique_name_in_owner = true
-position = Vector2(27.439028, 52.43903)
+position = Vector2(23.78049, 40.243904)
 
 [connection signal="mouse_entered" from="Zone" to="." method="_on_zone_mouse_entered"]
 [connection signal="mouse_exited" from="Zone" to="." method="_on_zone_mouse_exited"]
