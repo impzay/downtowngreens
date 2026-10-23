@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dp17jb8a57a1e"]
+
+[ext_resource type="Script" uid="uid://ck0kq0alkxs7p" path="res://Scenes/tutorial_screen.gd" id="1_y8jer"]
+[ext_resource type="Texture2D" uid="uid://eqvpgf1oacgw" path="res://Assets/Art/greensbg.png" id="2_b7hhi"]
+
+[node name="TutorialScreen" type="Control" unique_id=1706280951]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y8jer")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1977419475]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_b7hhi")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=2126708160]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CenterContainer" unique_id=1282417638]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=764897910]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="CenterContainer/Panel/VBox" unique_id=1151478410]
+layout_mode = 2
+
+[node name="Picture" type="TextureRect" parent="CenterContainer/Panel/VBox" unique_id=1009183665]
+layout_mode = 2
+
+[node name="Body" type="Label" parent="CenterContainer/Panel/VBox" unique_id=1890877797]
+layout_mode = 2
+
+[node name="PageLabel" type="Label" parent="CenterContainer/Panel/VBox" unique_id=1412143585]
+layout_mode = 2
+
+[node name="Buttons" type="HBoxContainer" parent="CenterContainer/Panel/VBox" unique_id=1320210268]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/Panel/VBox/Buttons" unique_id=2083355908]
+layout_mode = 2
+
+[node name="NextButton" type="Button" parent="CenterContainer/Panel/VBox/Buttons" unique_id=2015162896]
+layout_mode = 2
