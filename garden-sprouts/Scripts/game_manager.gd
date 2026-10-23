@@ -1,19 +1,19 @@
 extends Node
 
 var level: int = 1;
-var total_plants_pollinated: int = 0;
+var total_tasks_completed: int = 0;
 var game_won: bool = false
 var paused: bool = false
 var regular_cursor = preload("res://Assets/Sprites/kenney_cursor-pixel-pack/Tiles/tile_0028.png")
 var selector_cursor = preload("res://Assets/Sprites/kenney_cursor-pixel-pack/Tiles/tile_0135.png")
-var selecting: bool = false
+
+
 signal mouse_entered_plant();
 signal mouse_exited_plant();
 
 
 func _ready():
 	Input.set_custom_mouse_cursor(regular_cursor, Input.CURSOR_ARROW, Vector2(0, 0))
-
 
 func _on_hover_enter(plant):
 	Input.set_custom_mouse_cursor(selector_cursor, Input.CURSOR_ARROW, Vector2(0,0))
@@ -24,7 +24,7 @@ func _on_hover_exit(plant):
 func next_level():
 	
 	level += 1;
-	total_plants_pollinated = 0;
+	total_tasks_completed = 0;
 	
 	var ui = get_tree().current_scene.get_node("UI")
 	ui.fade()
@@ -43,7 +43,7 @@ func get_level():
 func restart():
 	game_won = false
 	level = 1
-	total_plants_pollinated = 0
+	total_tasks_completed = 0
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 func quit():

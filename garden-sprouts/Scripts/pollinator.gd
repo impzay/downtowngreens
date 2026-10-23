@@ -17,6 +17,7 @@ var level: int = 1
 
 
 var pollinate_on_arrival: bool = false
+var tasks_per_level: int 
 
 func _ready() -> void:
 	pass
@@ -27,12 +28,7 @@ func _process(delta: float) -> void:
 	
 	if !is_moving:
 		return
-	
-	if mouse_over_plant:
-		GameManager.selecting = true
-	else:
-		GameManager.selecting = false
-	
+
 	position = position.lerp(target_pos, delta * 1.5)
 	
 	#task gets completed if a plant is successfully pollinated.
@@ -48,22 +44,22 @@ func _process(delta: float) -> void:
 			
 
 func task_completed(pos: Vector2):
-	GameManager.total_plants_pollinated += 1
+	GameManager.total_tasks_completed += 1
 	
 	#check if all plants are pollinated and update # of remaining plants to be pollinated	 
 	
 	if GameManager.level == 1:
-		if GameManager.total_plants_pollinated >= 1:
+		if GameManager.total_tasks_completed >= 1:
 			celebrate()
 			await get_tree().create_timer(3.0).timeout
 			GameManager.next_level()
 	elif GameManager.level == 2:
-		if GameManager.total_plants_pollinated >= 2:
+		if GameManager.total_tasks_completed >= 2:
 			celebrate()
 			await get_tree().create_timer(3.0).timeout
 			GameManager.next_level()
 	elif GameManager.level == 3:
-		if GameManager.total_plants_pollinated >= 2:
+		if GameManager.total_tasks_completed >= 2:
 			celebrate()
 			win()
 			
