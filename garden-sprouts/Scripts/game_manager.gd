@@ -6,10 +6,21 @@ var game_won: bool = false
 var paused: bool = false
 var regular_cursor = preload("res://Assets/Sprites/kenney_cursor-pixel-pack/Tiles/tile_0028.png")
 var selector_cursor = preload("res://Assets/Sprites/kenney_cursor-pixel-pack/Tiles/tile_0135.png")
+var selecting: bool = false
+signal mouse_entered_plant();
+signal mouse_exited_plant();
+
 
 func _ready():
 	Input.set_custom_mouse_cursor(regular_cursor, Input.CURSOR_ARROW, Vector2(0, 0))
 
+
+func _on_hover_enter(plant):
+	Input.set_custom_mouse_cursor(selector_cursor, Input.CURSOR_ARROW, Vector2(0,0))
+	
+func _on_hover_exit(plant):
+	Input.set_custom_mouse_cursor(regular_cursor, Input.CURSOR_ARROW, Vector2(0, 0))
+	
 func next_level():
 	
 	level += 1;

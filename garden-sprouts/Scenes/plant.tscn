@@ -186,9 +186,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(32.68293, 79.85367)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(117, 146.875)
 
@@ -204,11 +201,6 @@ position = Vector2(17.682926, -95.73172)
 scale = Vector2(4.3093033, 4.2258773)
 sprite_frames = SubResource("SpriteFrames_274dd")
 animation = &"Unfertilized Flower"
-
-[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1805816403]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=442467576]
-shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Zone" type="Area2D" parent="." unique_id=863941260]
 
