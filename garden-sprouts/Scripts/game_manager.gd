@@ -4,7 +4,12 @@ var level: int = 1;
 var total_plants_pollinated: int = 0;
 var game_won: bool = false
 var paused: bool = false
-	
+var regular_cursor = preload("res://Assets/Sprites/kenney_cursor-pixel-pack/Tiles/tile_0028.png")
+var selector_cursor = preload("res://Assets/Sprites/kenney_cursor-pixel-pack/Tiles/tile_0135.png")
+
+func _ready():
+	Input.set_custom_mouse_cursor(regular_cursor, Input.CURSOR_ARROW, Vector2(0, 0))
+
 func next_level():
 	
 	level += 1;

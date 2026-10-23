@@ -259,7 +259,7 @@ color_ramp = SubResource("Gradient_274dd")
 
 [node name="PumpkinSpawn" type="Marker2D" parent="." unique_id=611906267]
 unique_name_in_owner = true
-position = Vector2(27.439028, 52.43903)
+position = Vector2(23.78049, 40.243904)
 
 [connection signal="mouse_entered" from="Zone" to="." method="_on_zone_mouse_entered"]
 [connection signal="mouse_exited" from="Zone" to="." method="_on_zone_mouse_exited"]
