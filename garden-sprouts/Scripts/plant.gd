@@ -20,7 +20,9 @@ func _ready():
 	var pollinator = get_parent().get_node("Pollinator")
 
 	mouse_entered_plant.connect(pollinator._on_mouse_entered_plant)
+	mouse_entered_plant.connect(GameManager._on_hover_enter)
 	mouse_exited_plant.connect(pollinator._on_mouse_exited_plant)
+	mouse_exited_plant.connect(GameManager._on_hover_exit)
 	update_sprite()
 	
 

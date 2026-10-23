@@ -28,6 +28,11 @@ func _process(delta: float) -> void:
 	if !is_moving:
 		return
 	
+	if mouse_over_plant:
+		GameManager.selecting = true
+	else:
+		GameManager.selecting = false
+	
 	position = position.lerp(target_pos, delta * 1.5)
 	
 	#task gets completed if a plant is successfully pollinated.
