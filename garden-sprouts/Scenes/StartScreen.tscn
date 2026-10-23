@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://d2j5nlm72lmdy"]
 
 [ext_resource type="Script" uid="uid://ccyl7quwcybkx" path="res://Scripts/start_screen.gd" id="1_0on6r"]
-[ext_resource type="Texture2D" uid="uid://bb5g1h7fijfem" path="res://Assets/Art/1_Background.png" id="2_ey7n4"]
-[ext_resource type="Texture2D" uid="uid://bu1jch0m8qaq" path="res://Assets/Sprites/Start_Button.png" id="3_3u666"]
+[ext_resource type="Texture2D" uid="uid://drv6a401b2c0j" path="res://Assets/Art/fall_bg_dtg.png" id="2_3u666"]
+[ext_resource type="FontFile" uid="uid://dcrcb5dvofcxi" path="res://Assets/Fonts/Anja Eliane accent002.ttf" id="3_a2231"]
+[ext_resource type="Texture2D" uid="uid://cpcsjat50alum" path="res://Assets/Sprites/Play0.png" id="4_ey7n4"]
 
 [node name="Control" type="Control" unique_id=1207078482]
 layout_mode = 3
@@ -20,27 +21,39 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_ey7n4")
+texture = ExtResource("2_3u666")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1933885091]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 478.0
+offset_top = 257.0
+offset_right = 120.0
+offset_bottom = -82.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.645, 0.645)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2117456668]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=2079300335]
 layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1.92523e-06, 0.6627277, 0, 1)
+theme_override_constants/shadow_offset_y = 19
+theme_override_constants/shadow_outline_size = 97
+theme_override_fonts/font = ExtResource("3_a2231")
+theme_override_font_sizes/font_size = 200
+text = "Garden Sprouts"
+metadata/_edit_group_ = true
 
 [node name="Start_Button" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=336824515]
 layout_mode = 2
-texture_normal = ExtResource("3_3u666")
-texture_pressed = ExtResource("3_3u666")
-texture_hover = ExtResource("3_3u666")
+texture_normal = ExtResource("4_ey7n4")
+stretch_mode = 3
 
 [node name="Quit_Button" type="TextureButton" parent="CenterContainer/VBoxContainer" unique_id=1118453889]
 layout_mode = 2
